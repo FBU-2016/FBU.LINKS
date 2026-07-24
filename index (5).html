@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Quick access to essential Fenerbahce University links for international students — applications, exams, portals, and residence permit info.">
+<meta property="og:title" content="FBU Links">
+<meta property="og:description" content="Everything an international student needs — from applying to settling in — in one place.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#002D72">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23002D72'/%3E%3Ctext x='16' y='23' font-family='Arial,sans-serif' font-size='20' font-weight='800' fill='%23FFED00' text-anchor='middle'%3EF%3C/text%3E%3C/svg%3E">
+<title>FBU Links</title>
+<style>
+  :root{
+    --navy:#002D72;
+    --navy-deep:#001a47;
+    --yellow:#FFED00;
+    --white:#ffffff;
+    --ink:#1c2333;
+    --grey:#5a6474;
+    --card:#ffffff;
+    --line:#e6e9f0;
+    --bg:#f5f7fb;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:820px;margin:0 auto;padding:0 20px 64px}
+
+  /* Header */
+  header{
+    background:linear-gradient(135deg,var(--navy) 0%,var(--navy-deep) 100%);
+    color:#fff;padding:52px 20px 46px;position:relative;overflow:hidden;
+    border-bottom:6px solid var(--yellow);
+  }
+  header::before{
+    content:"";position:absolute;top:-60px;right:-60px;width:240px;height:240px;
+    background:radial-gradient(circle,rgba(255,237,0,.14) 0%,transparent 70%);
+  }
+  .head-inner{max-width:820px;margin:0 auto;position:relative}
+  .eyebrow{
+    display:inline-block;font-size:12px;font-weight:700;
+    letter-spacing:.18em;text-transform:uppercase;color:var(--navy);
+    background:var(--yellow);padding:5px 12px;border-radius:3px;margin-bottom:16px;
+  }
+  h1{font-size:clamp(34px,7vw,52px);font-weight:800;letter-spacing:-.02em;line-height:1.02}
+  h1 .dot{color:var(--yellow)}
+  .subtitle{margin-top:10px;font-size:15px;color:rgba(255,255,255,.72);max-width:520px}
+
+  /* Section labels */
+  .section-label{
+    font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--navy);margin:30px 0 12px;padding-left:2px;display:flex;align-items:center;gap:10px;
+  }
+  .section-label::after{content:"";flex:1;height:2px;background:var(--yellow);opacity:.55;border-radius:2px}
+  .section-label:first-of-type{margin-top:34px}
+
+  /* Links */
+  .grid{display:grid;gap:11px}
+  a.link{
+    display:flex;align-items:center;gap:18px;text-decoration:none;color:inherit;
+    background:var(--card);border:1px solid var(--line);border-left:4px solid var(--yellow);
+    border-radius:12px;padding:17px 20px;
+    transition:transform .16s ease,box-shadow .16s ease,border-color .16s ease;
+  }
+  a.link:hover{transform:translateY(-2px);box-shadow:0 10px 26px -12px rgba(0,45,114,.32);border-left-color:var(--navy)}
+  a.link:focus-visible{outline:3px solid var(--navy);outline-offset:2px}
+  .badge{
+    flex:0 0 auto;width:44px;height:44px;display:grid;place-items:center;
+    background:var(--navy);color:var(--yellow);border-radius:10px;font-weight:800;font-size:15px;
+  }
+  .meta{flex:1 1 auto;min-width:0}
+  .label{font-size:17px;font-weight:700;color:var(--navy)}
+  .desc{font-size:13.5px;color:var(--grey);margin-top:2px}
+  .arrow{flex:0 0 auto;color:#c4cad6;transition:color .16s ease,transform .16s ease}
+  a.link:hover .arrow{color:var(--navy);transform:translateX(3px)}
+
+  /* Contact */
+  .contact{
+    margin-top:38px;
+    background:linear-gradient(135deg,var(--navy) 0%,var(--navy-deep) 100%);
+    border-radius:14px;padding:26px 24px;color:#fff;position:relative;overflow:hidden;
+  }
+  .contact::before{
+    content:"";position:absolute;bottom:-70px;left:-50px;width:200px;height:200px;
+    background:radial-gradient(circle,rgba(255,237,0,.12) 0%,transparent 70%);
+  }
+  .contact h2{
+    position:relative;font-size:13px;font-weight:700;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--yellow);margin-bottom:16px;
+  }
+  .contact-grid{position:relative;display:grid;gap:10px}
+  a.contact-item{
+    display:flex;align-items:center;gap:14px;text-decoration:none;color:#fff;
+    background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);
+    border-radius:10px;padding:13px 16px;
+    transition:background .16s ease,border-color .16s ease,transform .16s ease;
+  }
+  a.contact-item:hover{background:rgba(255,237,0,.12);border-color:var(--yellow);transform:translateY(-1px)}
+  a.contact-item:focus-visible{outline:3px solid var(--yellow);outline-offset:2px}
+  .ci-icon{flex:0 0 auto;width:38px;height:38px;display:grid;place-items:center;border-radius:9px;background:var(--yellow);color:var(--navy)}
+  .ci-meta{display:flex;flex-direction:column;line-height:1.3}
+  .ci-label{font-size:12px;color:rgba(255,255,255,.6);letter-spacing:.02em}
+  .ci-value{font-size:15.5px;font-weight:700}
+
+  footer{margin-top:36px;padding-top:20px;border-top:2px solid var(--navy);font-size:12.5px;color:var(--grey);text-align:center}
+
+  /* Language switcher */
+  .lang-switch{position:relative;display:flex;gap:6px;flex-wrap:wrap;margin-bottom:20px}
+  .lang-btn{
+    font-family:inherit;font-size:12px;font-weight:700;letter-spacing:.04em;
+    background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);color:rgba(255,255,255,.75);
+    padding:6px 12px;border-radius:999px;cursor:pointer;transition:background .16s ease,border-color .16s ease,color .16s ease;
+  }
+  .lang-btn:hover{background:rgba(255,255,255,.16);color:#fff}
+  .lang-btn.active{background:var(--yellow);border-color:var(--yellow);color:var(--navy)}
+  .lang-btn:focus-visible{outline:2px solid var(--yellow);outline-offset:2px}
+
+  /* RTL mirroring for Arabic / Persian */
+  html[dir="rtl"] body{font-family:Tahoma,"Segoe UI",Arial,sans-serif}
+  html[dir="rtl"] .section-label{padding-left:0;padding-right:2px}
+  html[dir="rtl"] a.link{border-left:none;border-right:4px solid var(--yellow)}
+  html[dir="rtl"] a.link:hover{border-right-color:var(--navy)}
+  html[dir="rtl"] .arrow{transform:scaleX(-1)}
+  html[dir="rtl"] a.link:hover .arrow{transform:scaleX(-1) translateX(3px)}
+  html[dir="rtl"] .contact::before{left:auto;right:-50px}
+  html[dir="rtl"] header::before{right:auto;left:-60px}
+
+  @media (max-width:520px){
+    header{padding:40px 20px 34px}
+    a.link{padding:15px 16px;gap:14px}
+    .badge{width:38px;height:38px;font-size:13px}
+    .label{font-size:15.5px}
+  }
+</style>
+</head>
+<body>
+  <header>
+    <div class="head-inner">
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="tr">TR</button>
+        <button class="lang-btn" data-lang="ar">AR</button>
+        <button class="lang-btn" data-lang="ru">RU</button>
+        <button class="lang-btn" data-lang="fa">FA</button>
+      </div>
+      <span class="eyebrow" data-i18n="eyebrow">Fenerbahçe University</span>
+      <h1><span data-i18n="h1">FBU Links</span><span class="dot">.</span></h1>
+      <p class="subtitle" data-i18n="subtitle">Everything an international student needs — from applying to settling in — in one place.</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <p class="section-label" data-i18n="sec1">Apply &amp; Admission</p>
+    <div class="grid">
+      <a class="link" href="https://apply.fbu.edu.tr/" target="_blank" rel="noopener">
+        <span class="badge">01</span>
+        <span class="meta">
+          <span class="label" data-i18n="l1_label">Apply FBU</span>
+          <span class="desc" data-i18n="l1_desc">Online application portal — start here</span>
+        </span>
+        <svg class="arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <a class="link" href="https://forms.office.com/pages/responsepage.aspx?id=d4Bx3Ou_CECKNvBjOzaoPtTVhqKkaONIhgXCICIZcs5UNEM2WVpBV1NFUFhTV1lKSDNETzEyMlZKSS4u&origin=QRCode" target="_blank" rel="noopener">
+        <span class="badge">02</span>
+        <span class="meta">
+          <span class="label" data-i18n="l2_label">English Proficiency Exam</span>
+          <span class="desc" data-i18n="l2_desc">Registration form (Microsoft Forms)</span>
+        </span>
+        <svg class="arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <a class="link" href="https://fbutomer.fbu.edu.tr/YeterlilikSinaviBasvuruFormu" target="_blank" rel="noopener">
+        <span class="badge">03</span>
+        <span class="meta">
+          <span class="label" data-i18n="l3_label">TÖMER Exam Form</span>
+          <span class="desc" data-i18n="l3_desc">Turkish proficiency exam application form</span>
+        </span>
+        <svg class="arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+
+    <p class="section-label" data-i18n="sec2">After You Register</p>
+    <div class="grid">
+      <a class="link" href="https://drive.google.com/file/d/1Gtm5IYPIzVb_cU0Jr79_OZ3Opd_W5Olb/view?usp=sharing" target="_blank" rel="noopener">
+        <span class="badge">04</span>
+        <span class="meta">
+          <span class="label" data-i18n="l4_label">After Registration Steps</span>
+          <span class="desc" data-i18n="l4_desc">Post-registration checklist (Google Drive)</span>
+        </span>
+        <svg class="arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <a class="link" href="https://ois.fbu.edu.tr/auth/login" target="_blank" rel="noopener">
+        <span class="badge">05</span>
+        <span class="meta">
+          <span class="label" data-i18n="l5_label">OIS FBU</span>
+          <span class="desc" data-i18n="l5_desc">Student Information System — login portal</span>
+        </span>
+        <svg class="arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <a class="link" href="https://unisis.fbu.edu.tr/Login" target="_blank" rel="noopener">
+        <span class="badge">06</span>
+        <span class="meta">
+          <span class="label" data-i18n="l6_label">Unisis FBU</span>
+          <span class="desc" data-i18n="l6_desc">Academic &amp; administrative system</span>
+        </span>
+        <svg class="arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+
+    <p class="section-label" data-i18n="sec3">Living in Turkey</p>
+    <div class="grid">
+      <a class="link" href="https://international.fbu.edu.tr/upload/custom/Yeni-Ikamet-Izni-Basvuru-Sistemi--2-1.pdf" target="_blank" rel="noopener">
+        <span class="badge">07</span>
+        <span class="meta">
+          <span class="label" data-i18n="l7_label">Residence Permit Documents</span>
+          <span class="desc" data-i18n="l7_desc">New residence permit application guide (PDF)</span>
+        </span>
+        <svg class="arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <a class="link" href="https://international.fbu.edu.tr/bilgi/104/yurtlar" target="_blank" rel="noopener">
+        <span class="badge">08</span>
+        <span class="meta">
+          <span class="label" data-i18n="l8_label">Dormitories</span>
+          <span class="desc" data-i18n="l8_desc">Student housing options (Yurtlar)</span>
+        </span>
+        <svg class="arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+
+    <section class="contact">
+      <h2 data-i18n="contact_h2">Get in Touch</h2>
+      <div class="contact-grid">
+        <a class="contact-item" href="https://wa.me/905498325782" target="_blank" rel="noopener">
+          <span class="ci-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </span>
+          <span class="ci-meta">
+            <span class="ci-label" data-i18n="ci_whatsapp">WhatsApp</span>
+            <span class="ci-value">+90 549 832 57 82</span>
+          </span>
+        </a>
+        <a class="contact-item" href="https://wa.me/905498325783" target="_blank" rel="noopener">
+          <span class="ci-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </span>
+          <span class="ci-meta">
+            <span class="ci-label" data-i18n="ci_whatsapp">WhatsApp</span>
+            <span class="ci-value">+90 549 832 57 83</span>
+          </span>
+        </a>
+        <a class="contact-item" href="mailto:admission@fbu.edu.tr">
+          <span class="ci-icon">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          </span>
+          <span class="ci-meta">
+            <span class="ci-label" data-i18n="ci_email">Email</span>
+            <span class="ci-value">admission@fbu.edu.tr</span>
+          </span>
+        </a>
+        <a class="contact-item" href="https://instagram.com/fbu.international" target="_blank" rel="noopener">
+          <span class="ci-icon">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </span>
+          <span class="ci-meta">
+            <span class="ci-label" data-i18n="ci_instagram">Instagram</span>
+            <span class="ci-value">@fbu.international</span>
+          </span>
+        </a>
+      </div>
+    </section>
+
+    <footer data-i18n="footer">Fenerbahçe University · Keep this page bookmarked for quick access.</footer>
+  </main>
+
+  <script>
+    const translations = {
+      en: {
+        eyebrow:"Fenerbahçe University", h1:"FBU Links",
+        subtitle:"Everything an international student needs — from applying to settling in — in one place.",
+        sec1:"Apply & Admission", sec2:"After You Register", sec3:"Living in Turkey",
+        l1_label:"Apply FBU", l1_desc:"Online application portal — start here",
+        l2_label:"English Proficiency Exam", l2_desc:"Registration form (Microsoft Forms)",
+        l3_label:"TÖMER Exam Form", l3_desc:"Turkish proficiency exam application form",
+        l4_label:"After Registration Steps", l4_desc:"Post-registration checklist (Google Drive)",
+        l5_label:"OIS FBU", l5_desc:"Student Information System — login portal",
+        l6_label:"Unisis FBU", l6_desc:"Academic & administrative system",
+        l7_label:"Residence Permit Documents", l7_desc:"New residence permit application guide (PDF)",
+        l8_label:"Dormitories", l8_desc:"Student housing options (Yurtlar)",
+        contact_h2:"Get in Touch", ci_whatsapp:"WhatsApp", ci_email:"Email", ci_instagram:"Instagram",
+        footer:"Fenerbahçe University · Keep this page bookmarked for quick access."
+      },
+      tr: {
+        eyebrow:"Fenerbahçe Üniversitesi", h1:"FBU Bağlantılar",
+        subtitle:"Uluslararası bir öğrencinin ihtiyaç duyduğu her şey — başvurudan yerleşmeye kadar — tek bir yerde.",
+        sec1:"Başvuru ve Kabul", sec2:"Kayıttan Sonra", sec3:"Türkiye'de Yaşam",
+        l1_label:"FBU'ya Başvur", l1_desc:"Çevrimiçi başvuru portalı — buradan başlayın",
+        l2_label:"İngilizce Yeterlilik Sınavı", l2_desc:"Kayıt formu (Microsoft Forms)",
+        l3_label:"TÖMER Sınav Formu", l3_desc:"Türkçe yeterlilik sınavı başvuru formu",
+        l4_label:"Kayıt Sonrası Adımlar", l4_desc:"Kayıt sonrası kontrol listesi (Google Drive)",
+        l5_label:"OIS FBU", l5_desc:"Öğrenci Bilgi Sistemi — giriş portalı",
+        l6_label:"Unisis FBU", l6_desc:"Akademik ve idari sistem",
+        l7_label:"Oturma İzni Belgeleri", l7_desc:"Yeni oturma izni başvuru rehberi (PDF)",
+        l8_label:"Yurtlar", l8_desc:"Öğrenci barınma seçenekleri (Yurtlar)",
+        contact_h2:"İletişime Geçin", ci_whatsapp:"WhatsApp", ci_email:"E-posta", ci_instagram:"Instagram",
+        footer:"Fenerbahçe Üniversitesi · Hızlı erişim için bu sayfayı yer imlerine ekleyin."
+      },
+      ar: {
+        eyebrow:"جامعة فنربخشة", h1:"روابط FBU",
+        subtitle:"كل ما يحتاجه الطالب الدولي — من التقديم إلى الاستقرار — في مكان واحد.",
+        sec1:"التقديم والقبول", sec2:"بعد التسجيل", sec3:"الحياة في تركيا",
+        l1_label:"التقديم إلى FBU", l1_desc:"بوابة التقديم الإلكتروني — ابدأ هنا",
+        l2_label:"اختبار الكفاءة في اللغة الإنجليزية", l2_desc:"نموذج التسجيل (Microsoft Forms)",
+        l3_label:"نموذج اختبار TÖMER", l3_desc:"نموذج التقديم لاختبار الكفاءة في اللغة التركية",
+        l4_label:"خطوات ما بعد التسجيل", l4_desc:"قائمة التحقق بعد التسجيل (Google Drive)",
+        l5_label:"نظام OIS FBU", l5_desc:"نظام معلومات الطلاب — بوابة الدخول",
+        l6_label:"نظام Unisis FBU", l6_desc:"النظام الأكاديمي والإداري",
+        l7_label:"وثائق تصريح الإقامة", l7_desc:"دليل التقديم لتصريح الإقامة الجديد (PDF)",
+        l8_label:"السكن الجامعي", l8_desc:"خيارات السكن الطلابي (يورتلار)",
+        contact_h2:"تواصل معنا", ci_whatsapp:"واتساب", ci_email:"البريد الإلكتروني", ci_instagram:"إنستغرام",
+        footer:"جامعة فنربخشة · احتفظ بهذه الصفحة في المفضلة للوصول السريع."
+      },
+      ru: {
+        eyebrow:"Университет Фенербахче", h1:"Ссылки FBU",
+        subtitle:"Всё, что нужно иностранному студенту — от подачи заявки до обустройства — в одном месте.",
+        sec1:"Подача заявки и зачисление", sec2:"После регистрации", sec3:"Жизнь в Турции",
+        l1_label:"Подать заявку в FBU", l1_desc:"Портал онлайн-заявок — начните здесь",
+        l2_label:"Экзамен по английскому языку", l2_desc:"Форма регистрации (Microsoft Forms)",
+        l3_label:"Форма экзамена TÖMER", l3_desc:"Форма заявки на экзамен по турецкому языку",
+        l4_label:"Шаги после регистрации", l4_desc:"Чек-лист после регистрации (Google Drive)",
+        l5_label:"OIS FBU", l5_desc:"Информационная система студента — вход",
+        l6_label:"Unisis FBU", l6_desc:"Академическая и административная система",
+        l7_label:"Документы на вид на жительство", l7_desc:"Руководство по новому виду на жительство (PDF)",
+        l8_label:"Общежития", l8_desc:"Варианты студенческого жилья (Yurtlar)",
+        contact_h2:"Связаться с нами", ci_whatsapp:"WhatsApp", ci_email:"Эл. почта", ci_instagram:"Instagram",
+        footer:"Университет Фенербахче · Сохраните эту страницу в закладках для быстрого доступа."
+      },
+      fa: {
+        eyebrow:"دانشگاه فنرباغچه", h1:"لینک‌های FBU",
+        subtitle:"هر آنچه یک دانشجوی بین‌المللی نیاز دارد — از ثبت‌نام تا استقرار — در یک صفحه.",
+        sec1:"ثبت‌نام و پذیرش", sec2:"پس از ثبت‌نام", sec3:"زندگی در ترکیه",
+        l1_label:"ثبت‌نام در FBU", l1_desc:"پورتال ثبت‌نام آنلاین — از اینجا شروع کنید",
+        l2_label:"آزمون مهارت زبان انگلیسی", l2_desc:"فرم ثبت‌نام (Microsoft Forms)",
+        l3_label:"فرم آزمون TÖMER", l3_desc:"فرم ثبت‌نام آزمون مهارت زبان ترکی",
+        l4_label:"مراحل پس از ثبت‌نام", l4_desc:"چک‌لیست پس از ثبت‌نام (Google Drive)",
+        l5_label:"OIS FBU", l5_desc:"سامانه اطلاعات دانشجویی — ورود",
+        l6_label:"Unisis FBU", l6_desc:"سامانه آموزشی و اداری",
+        l7_label:"مدارک اقامت", l7_desc:"راهنمای درخواست اقامت جدید (PDF)",
+        l8_label:"خوابگاه‌ها", l8_desc:"گزینه‌های خوابگاه دانشجویی (یورتلار)",
+        contact_h2:"تماس با ما", ci_whatsapp:"واتساپ", ci_email:"ایمیل", ci_instagram:"اینستاگرام",
+        footer:"دانشگاه فنرباغچه · این صفحه را برای دسترسی سریع نشانه‌گذاری کنید."
+      }
+    };
+
+    function applyLang(lang){
+      if(!translations[lang]) lang = 'en';
+      document.querySelectorAll('[data-i18n]').forEach(el=>{
+        const key = el.getAttribute('data-i18n');
+        if(translations[lang][key]) el.textContent = translations[lang][key];
+      });
+      document.documentElement.lang = lang;
+      document.documentElement.dir = (lang === 'ar' || lang === 'fa') ? 'rtl' : 'ltr';
+      document.querySelectorAll('.lang-btn').forEach(b=>{
+        b.classList.toggle('active', b.dataset.lang === lang);
+      });
+      try{ localStorage.setItem('fbu-lang', lang); }catch(e){}
+    }
+
+    document.querySelectorAll('.lang-btn').forEach(btn=>{
+      btn.addEventListener('click', ()=> applyLang(btn.dataset.lang));
+    });
+
+    let savedLang = 'en';
+    try{ savedLang = localStorage.getItem('fbu-lang') || 'en'; }catch(e){}
+    applyLang(savedLang);
+  </script>
+</body>
+</html>
