@@ -131,6 +131,9 @@
   html[dir="rtl"] a.link:hover .arrow{transform:scaleX(-1) translateX(3px)}
   html[dir="rtl"] .contact::before{left:auto;right:-50px}
   html[dir="rtl"] header::before{right:auto;left:-60px}
+  html[dir="rtl"] .badge,
+  html[dir="rtl"] .ci-value{direction:ltr;unicode-bidi:isolate}
+  html[dir="rtl"] .ci-meta{text-align:right}
 
   @media (max-width:520px){
     header{padding:40px 20px 34px}
@@ -149,10 +152,11 @@
         <button class="lang-btn" data-lang="ar">AR</button>
         <button class="lang-btn" data-lang="ru">RU</button>
         <button class="lang-btn" data-lang="fa">FA</button>
+        <button class="lang-btn" data-lang="uz">UZ</button>
       </div>
       <span class="eyebrow" data-i18n="eyebrow">Fenerbahçe University</span>
       <h1><span data-i18n="h1">FBU Links</span><span class="dot">.</span></h1>
-      <p class="subtitle" data-i18n="subtitle">Everything an international student needs — from applying to settling in — in one place.</p>
+      <p class="subtitle" data-i18n="subtitle">Essential resources for international students.</p>
     </div>
   </header>
 
@@ -283,7 +287,7 @@
     const translations = {
       en: {
         eyebrow:"Fenerbahçe University", h1:"FBU Links",
-        subtitle:"Everything an international student needs — from applying to settling in — in one place.",
+        subtitle:"Essential resources for international students.",
         sec1:"Apply & Admission", sec2:"After You Register", sec3:"Living in Turkey",
         l1_label:"Apply FBU", l1_desc:"Online application portal — start here",
         l2_label:"English Proficiency Exam", l2_desc:"Registration form (Microsoft Forms)",
@@ -297,64 +301,79 @@
         footer:"Fenerbahçe University · Keep this page bookmarked for quick access."
       },
       tr: {
-        eyebrow:"Fenerbahçe Üniversitesi", h1:"FBU Bağlantılar",
-        subtitle:"Uluslararası bir öğrencinin ihtiyaç duyduğu her şey — başvurudan yerleşmeye kadar — tek bir yerde.",
-        sec1:"Başvuru ve Kabul", sec2:"Kayıttan Sonra", sec3:"Türkiye'de Yaşam",
-        l1_label:"FBU'ya Başvur", l1_desc:"Çevrimiçi başvuru portalı — buradan başlayın",
+        eyebrow:"Fenerbahçe Üniversitesi", h1:"FBU Hızlı Erişim",
+        subtitle:"Uluslararası öğrenciler için temel kaynaklar.",
+        sec1:"Başvuru ve Kabul", sec2:"Kayıt Sonrası", sec3:"Türkiye'de Yaşam",
+        l1_label:"FBU'ya Başvur", l1_desc:"Online başvuru sayfası — buradan başlayın",
         l2_label:"İngilizce Yeterlilik Sınavı", l2_desc:"Kayıt formu (Microsoft Forms)",
-        l3_label:"TÖMER Sınav Formu", l3_desc:"Türkçe yeterlilik sınavı başvuru formu",
-        l4_label:"Kayıt Sonrası Adımlar", l4_desc:"Kayıt sonrası kontrol listesi (Google Drive)",
-        l5_label:"OIS FBU", l5_desc:"Öğrenci Bilgi Sistemi — giriş portalı",
-        l6_label:"Unisis FBU", l6_desc:"Akademik ve idari sistem",
-        l7_label:"Oturma İzni Belgeleri", l7_desc:"Yeni oturma izni başvuru rehberi (PDF)",
-        l8_label:"Yurtlar", l8_desc:"Öğrenci barınma seçenekleri (Yurtlar)",
-        contact_h2:"İletişime Geçin", ci_whatsapp:"WhatsApp", ci_email:"E-posta", ci_instagram:"Instagram",
-        footer:"Fenerbahçe Üniversitesi · Hızlı erişim için bu sayfayı yer imlerine ekleyin."
+        l3_label:"TÖMER Sınavı Başvuru Formu", l3_desc:"Türkçe yeterlilik sınavına başvuru formu",
+        l4_label:"Kayıt Sonrası Yapılacaklar", l4_desc:"Kayıt sonrası kontrol listesi (Google Drive)",
+        l5_label:"OIS FBU", l5_desc:"Öğrenci bilgi sistemi girişi",
+        l6_label:"Unisis FBU", l6_desc:"Akademik ve idari işlemler sistemi",
+        l7_label:"İkamet İzni Belgeleri", l7_desc:"Yeni ikamet izni başvuru rehberi (PDF)",
+        l8_label:"Yurtlar", l8_desc:"Öğrenci barınma seçenekleri",
+        contact_h2:"Bize Ulaşın", ci_whatsapp:"WhatsApp", ci_email:"E-posta", ci_instagram:"Instagram",
+        footer:"Fenerbahçe Üniversitesi · Hızlı erişim için sayfayı yer imlerinize ekleyin."
       },
       ar: {
-        eyebrow:"جامعة فنربخشة", h1:"روابط FBU",
-        subtitle:"كل ما يحتاجه الطالب الدولي — من التقديم إلى الاستقرار — في مكان واحد.",
+        eyebrow:"جامعة فنربخشة", h1:"روابط الجامعة",
+        subtitle:"موارد أساسية للطلاب الدوليين.",
         sec1:"التقديم والقبول", sec2:"بعد التسجيل", sec3:"الحياة في تركيا",
-        l1_label:"التقديم إلى FBU", l1_desc:"بوابة التقديم الإلكتروني — ابدأ هنا",
-        l2_label:"اختبار الكفاءة في اللغة الإنجليزية", l2_desc:"نموذج التسجيل (Microsoft Forms)",
-        l3_label:"نموذج اختبار TÖMER", l3_desc:"نموذج التقديم لاختبار الكفاءة في اللغة التركية",
-        l4_label:"خطوات ما بعد التسجيل", l4_desc:"قائمة التحقق بعد التسجيل (Google Drive)",
-        l5_label:"نظام OIS FBU", l5_desc:"نظام معلومات الطلاب — بوابة الدخول",
-        l6_label:"نظام Unisis FBU", l6_desc:"النظام الأكاديمي والإداري",
-        l7_label:"وثائق تصريح الإقامة", l7_desc:"دليل التقديم لتصريح الإقامة الجديد (PDF)",
-        l8_label:"السكن الجامعي", l8_desc:"خيارات السكن الطلابي (يورتلار)",
+        l1_label:"التقديم إلى الجامعة", l1_desc:"بوابة التقديم الإلكتروني، ابدأ من هنا",
+        l2_label:"اختبار الكفاءة في اللغة الإنجليزية", l2_desc:"نموذج التسجيل عبر Microsoft Forms",
+        l3_label:"نموذج اختبار تومر", l3_desc:"نموذج التقديم لاختبار الكفاءة في اللغة التركية",
+        l4_label:"خطوات ما بعد التسجيل", l4_desc:"قائمة تحقق بعد التسجيل عبر Google Drive",
+        l5_label:"نظام OIS", l5_desc:"نظام معلومات الطلاب، بوابة الدخول",
+        l6_label:"نظام Unisis", l6_desc:"النظام الأكاديمي والإداري",
+        l7_label:"وثائق تصريح الإقامة", l7_desc:"دليل التقديم لتصريح الإقامة الجديد بصيغة PDF",
+        l8_label:"السكن الجامعي", l8_desc:"خيارات سكن الطلاب",
         contact_h2:"تواصل معنا", ci_whatsapp:"واتساب", ci_email:"البريد الإلكتروني", ci_instagram:"إنستغرام",
-        footer:"جامعة فنربخشة · احتفظ بهذه الصفحة في المفضلة للوصول السريع."
+        footer:"جامعة فنربخشة · احفظ هذه الصفحة في المفضلة للوصول السريع."
       },
       ru: {
-        eyebrow:"Университет Фенербахче", h1:"Ссылки FBU",
-        subtitle:"Всё, что нужно иностранному студенту — от подачи заявки до обустройства — в одном месте.",
-        sec1:"Подача заявки и зачисление", sec2:"После регистрации", sec3:"Жизнь в Турции",
-        l1_label:"Подать заявку в FBU", l1_desc:"Портал онлайн-заявок — начните здесь",
+        eyebrow:"Университет Фенербахче", h1:"Полезные ссылки FBU",
+        subtitle:"Основные ресурсы для иностранных студентов.",
+        sec1:"Приём и поступление", sec2:"После зачисления", sec3:"Жизнь в Турции",
+        l1_label:"Подать документы в FBU", l1_desc:"Портал подачи заявки — начните здесь",
         l2_label:"Экзамен по английскому языку", l2_desc:"Форма регистрации (Microsoft Forms)",
-        l3_label:"Форма экзамена TÖMER", l3_desc:"Форма заявки на экзамен по турецкому языку",
-        l4_label:"Шаги после регистрации", l4_desc:"Чек-лист после регистрации (Google Drive)",
-        l5_label:"OIS FBU", l5_desc:"Информационная система студента — вход",
-        l6_label:"Unisis FBU", l6_desc:"Академическая и административная система",
-        l7_label:"Документы на вид на жительство", l7_desc:"Руководство по новому виду на жительство (PDF)",
-        l8_label:"Общежития", l8_desc:"Варианты студенческого жилья (Yurtlar)",
-        contact_h2:"Связаться с нами", ci_whatsapp:"WhatsApp", ci_email:"Эл. почта", ci_instagram:"Instagram",
-        footer:"Университет Фенербахче · Сохраните эту страницу в закладках для быстрого доступа."
+        l3_label:"Заявка на экзамен TÖMER", l3_desc:"Форма подачи на экзамен по турецкому языку",
+        l4_label:"Что делать после зачисления", l4_desc:"Чек-лист после зачисления (Google Drive)",
+        l5_label:"OIS FBU", l5_desc:"Личный кабинет студента",
+        l6_label:"Unisis FBU", l6_desc:"Учебная и административная система",
+        l7_label:"Вид на жительство", l7_desc:"Инструкция по оформлению вида на жительство (PDF)",
+        l8_label:"Общежития", l8_desc:"Варианты студенческого жилья",
+        contact_h2:"Связаться с нами", ci_whatsapp:"WhatsApp", ci_email:"Почта", ci_instagram:"Instagram",
+        footer:"Университет Фенербахче · Сохраните страницу в закладки для быстрого доступа."
       },
       fa: {
         eyebrow:"دانشگاه فنرباغچه", h1:"لینک‌های FBU",
-        subtitle:"هر آنچه یک دانشجوی بین‌المللی نیاز دارد — از ثبت‌نام تا استقرار — در یک صفحه.",
+        subtitle:"منابع ضروری برای دانشجویان بین‌المللی.",
         sec1:"ثبت‌نام و پذیرش", sec2:"پس از ثبت‌نام", sec3:"زندگی در ترکیه",
-        l1_label:"ثبت‌نام در FBU", l1_desc:"پورتال ثبت‌نام آنلاین — از اینجا شروع کنید",
-        l2_label:"آزمون مهارت زبان انگلیسی", l2_desc:"فرم ثبت‌نام (Microsoft Forms)",
-        l3_label:"فرم آزمون TÖMER", l3_desc:"فرم ثبت‌نام آزمون مهارت زبان ترکی",
+        l1_label:"ثبت‌نام در FBU", l1_desc:"درگاه ثبت‌نام آنلاین؛ از همین‌جا شروع کنید",
+        l2_label:"آزمون زبان انگلیسی", l2_desc:"فرم ثبت‌نام (Microsoft Forms)",
+        l3_label:"فرم آزمون تومر", l3_desc:"فرم ثبت‌نام آزمون زبان ترکی",
         l4_label:"مراحل پس از ثبت‌نام", l4_desc:"چک‌لیست پس از ثبت‌نام (Google Drive)",
-        l5_label:"OIS FBU", l5_desc:"سامانه اطلاعات دانشجویی — ورود",
+        l5_label:"OIS FBU", l5_desc:"پنل دانشجویی، ورود به سامانه",
         l6_label:"Unisis FBU", l6_desc:"سامانه آموزشی و اداری",
         l7_label:"مدارک اقامت", l7_desc:"راهنمای درخواست اقامت جدید (PDF)",
-        l8_label:"خوابگاه‌ها", l8_desc:"گزینه‌های خوابگاه دانشجویی (یورتلار)",
-        contact_h2:"تماس با ما", ci_whatsapp:"واتساپ", ci_email:"ایمیل", ci_instagram:"اینستاگرام",
-        footer:"دانشگاه فنرباغچه · این صفحه را برای دسترسی سریع نشانه‌گذاری کنید."
+        l8_label:"خوابگاه‌ها", l8_desc:"گزینه‌های اسکان دانشجویی",
+        contact_h2:"با ما در ارتباط باشید", ci_whatsapp:"واتساپ", ci_email:"ایمیل", ci_instagram:"اینستاگرام",
+        footer:"دانشگاه فنرباغچه · این صفحه را برای دسترسی سریع نشانک کنید."
+      },
+      uz: {
+        eyebrow:"Fenerbahce Universiteti", h1:"FBU Tezkor Havolalar",
+        subtitle:"Xalqaro talabalar uchun asosiy resurslar.",
+        sec1:"Ariza va Qabul", sec2:"Roʻyxatdan Oʻtgach", sec3:"Turkiyada Hayot",
+        l1_label:"FBUga Ariza Topshirish", l1_desc:"Onlayn ariza portali — shu yerdan boshlang",
+        l2_label:"Ingliz Tili Bilim Darajasi Imtihoni", l2_desc:"Roʻyxatdan oʻtish formasi (Microsoft Forms)",
+        l3_label:"TÖMER Imtihoniga Ariza Formasi", l3_desc:"Turk tili bilim darajasi imtihoniga ariza",
+        l4_label:"Roʻyxatdan Oʻtgandan Keyingi Qadamlar", l4_desc:"Roʻyxatdan oʻtgandan keyingi roʻyxat (Google Drive)",
+        l5_label:"OIS FBU", l5_desc:"Talaba shaxsiy kabineti",
+        l6_label:"Unisis FBU", l6_desc:"Oʻquv va maʼmuriy tizim",
+        l7_label:"Ikomat Hujjatlari", l7_desc:"Yangi ikomat uchun ariza qoʻllanmasi (PDF)",
+        l8_label:"Yotoqxonalar", l8_desc:"Talabalar uchun turar joy variantlari",
+        contact_h2:"Biz Bilan Bogʻlaning", ci_whatsapp:"WhatsApp", ci_email:"Elektron Pochta", ci_instagram:"Instagram",
+        footer:"Fenerbahce Universiteti · Tezkor kirish uchun sahifani xatchoʻp qiling."
       }
     };
 
